@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 
-const greeting = ({currentUser, logout}) => {
+const Greeting = ({currentUser, logout}) => {
     const ifUser = () => (
         <div>
             <h2>Hi, {currentUser.username}. Welcome to BenchBnb!</h2>
@@ -10,13 +10,13 @@ const greeting = ({currentUser, logout}) => {
         </div>
     );
     const noUser = () => (
-        <div>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/login'>Log In</Link>
+        <div className="greetings-Links">
+            <Link to='/signup' className="gLinks">Sign Up</Link>
+            <Link to='/login' className="gLinks">Log In</Link>
         </div>
     );
 
     return currentUser ? ifUser() : noUser();
 };
 
-export default greeting;
+export default Greeting;

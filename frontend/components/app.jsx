@@ -5,13 +5,15 @@ import LoginFormContainer from './greeting/session_form/login_form_container';
 import SignupFormContainer from './greeting/session_form/signup_form_container';
 
 const App = () => (
-    <div>
-        <header>
-            <h1>Hello!</h1>
+    <div className="header-greeting">
+        <header className="greeting">
+            <h1>Welcome to BenchBnb!</h1>
             <GreetingContainer />
         </header>
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <div>
+            <AuthRoute path="/login" component={LoginFormContainer} />
+            <AuthRoute path="/signup" component={SignupFormContainer} />
+        </div>
     </div>
 );
 
